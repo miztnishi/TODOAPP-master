@@ -55,6 +55,16 @@ class GoalInfo: Object {
 //        }
     }
     
+    func trueOrFalseUpdate(bool:Bool){
+        let realm = try! Realm()
+        try! realm.write {
+        let  goalInfo = GoalInfo()
+           goalInfo.opened = !goalInfo.opened
+            
+        }
+        
+    }
+    
     func deleteAll(){
         let realm = try!Realm()
         try! realm.write(){

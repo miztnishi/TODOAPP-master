@@ -83,13 +83,14 @@ class GoalInfo: Object {
         }
     }
     //そのタイトルに関する選択されたsectionDataの削除
-    func deleteTitle(miniDo:String){
+    func deleteMinido(miniDo:String){
         let realm = try!Realm()
         
         try! realm.write(){
             var result = realm.objects(SectionData.self)
             result =  result.filter("miniDo like '\(miniDo)'")
-            realm.delete(result)
+            print("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",result)
+//            realm.delete(result)
         }
     }
     
